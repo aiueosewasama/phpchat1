@@ -21,12 +21,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['message'])) {
     // APIへのリクエスト設定
     $url = 'https://api.openai.com/v1/chat/completions';
     $data = [
-        'model' => 'gpt-5-mini', // ご指定のモデル名
+        'model' => 'gpt-4o-mini', // ご指定のモデル名
         'messages' => [
             ['role' => 'system', 'content' => 'ユーザーの入力から最も重要な名詞を1つ選び、「原語:英訳」の形式で1行のみ返してください。余計な説明は一切不要です。'],
             ['role' => 'user', 'content' => $userMessage]
         ],
-        'temperature' => 0.3,
+        // 'temperature' => 0.3,
     ];
 
     $options = [
